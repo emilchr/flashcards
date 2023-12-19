@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-
 // Slice
 export const topicsSlice = createSlice({
     name: 'topics',
