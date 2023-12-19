@@ -9,10 +9,13 @@ export const topicsSlice = createSlice({
     },
     reducers: {
         addTopic: (state, action) => {
-            
-            state.topics[action.payload.topicId] = {...action.payload, quizId: []} 
-            return state;
-
+            const { id, name, icon } = action.payload;
+            state.topics[id] = {
+                id,
+                name,
+                icon,
+                quizIds: []
+            }
         }
     }
 })
@@ -20,4 +23,4 @@ export const topicsSlice = createSlice({
 // SELECTORS
 export const selectTopics = (state) => state.topics.topics; // Selects topics nested inside initialState
 export const { addTopic } = topicsSlice.actions;
-export default topicsSlice.reducer;
+export const topicsReducer = topicsSlice.reducer;
