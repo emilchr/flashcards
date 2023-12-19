@@ -6,15 +6,19 @@ import { createSlice } from "@reduxjs/toolkit";
 export const topicsSlice = createSlice({
     name: 'topics',
     initialState: {
-        topics: {},
+        topics: {}
     },
     reducers: {
         addTopic: (state, action) => {
-            //const { id, name, icon} = action.payload;
-            state.push(action.payload)
+            
+            state.topics[action.payload.topicId] = {...action.payload, quizId: []} 
+            return state;
+
         }
     }
 })
 
 // SELECTORS
-export const selectTopic = (state) => state.topicsSlice; // Selects topics nested inside initialState
+export const selectTopics = (state) => state.topics.topics; // Selects topics nested inside initialState
+export const { addTopic } = topicsSlice.actions;
+export default topicsSlice.reducer;
