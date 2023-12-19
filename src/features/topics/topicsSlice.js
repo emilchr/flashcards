@@ -16,12 +16,20 @@ export const topicsSlice = createSlice({
                 icon,
                 quizIds: []
             }
+        },
+    },
+    extraReducers: {
+        addQuizId: (state, action) => {
+            const { topicId, quizId } = action.payload;
+            state.topics[topicId].quizIds.push(quizId); // adds quizId to quizIds in topicsSlice
+
         }
     }
+
 })
 
 
-export const { addTopic } = topicsSlice.actions;
+export const { addTopic, addQuizId } = topicsSlice.actions;
 
 // SELECTORS
 export const selectTopics = (state) => state.topics.topics; // Selects topics nested inside initialState
