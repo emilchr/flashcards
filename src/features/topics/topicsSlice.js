@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+// Thunks
+
+
+
 // Slice
 export const topicsSlice = createSlice({
     name: 'topics',
@@ -24,14 +28,13 @@ export const topicsSlice = createSlice({
                 quizIds: []
             }
         },
-    },
-    extraReducers: {
         addQuizId: (state, action) => {
-            const { topicId, quizId } = action.payload;
-            state.topics[topicId].quizIds.push(quizId); // adds quizId to quizIds in topicsSlice
-
+            const { topicId, id } = action.payload;
+            state.topics[topicId].quizIds.push(id); // adds quizId to quizIds in topicsSlice
+    
         }
-    }
+    },
+    
 
 })
 
