@@ -4,8 +4,15 @@ export const cardsSlice = createSlice({
     name: 'cards',
     initialState: {
         cards: {
-            
-        }
+           '1' : { id: '1',
+            front: 'Hello',
+            back: 'There'
+        },
+            '2':{ id: '2',
+            front: 'Hi',
+            back: 'Man'
+        },
+    }
     },
     reducers: {
         addCard: (state, action) => {

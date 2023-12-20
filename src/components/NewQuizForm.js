@@ -7,7 +7,7 @@ import ROUTES from "../app/routes";
 import { addQuizId, selectTopics } from "../features/topics/topicsSlice";
 
 import { addQuiz } from "../features/quizzes/quizzesSlice";
-import { addCard } from "../features/cards/cardsSlice";
+import { addCard, findCardId } from "../features/cards/cardsSlice";
 
 export default function NewQuizForm() {
   const [name, setName] = useState("");
