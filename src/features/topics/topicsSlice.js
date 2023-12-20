@@ -1,10 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-// Thunks
-
-
-
 // Slice
 export const topicsSlice = createSlice({
     name: 'topics',
