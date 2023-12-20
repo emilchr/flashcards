@@ -9,9 +9,12 @@ export const quizzesSlice = createSlice({
     },
     reducers: {
         addQuiz: (state, action) => {
-                const { id, topicId } = action.payload;
+                const { id, name, topicId, cardIds } = action.payload;
                 state.quizzes[id] = {
-                    topicId // stuck here
+                    id,
+                    name,
+                    topicId,
+                    cardIds
                 }
         }
     }
@@ -22,4 +25,4 @@ export const { addQuiz } = quizzesSlice.actions;
 // Selectors
 export const selectQuizzes = (state) => state.quizzes.quizzes;
 
-export const quizzesReducer = quizzesSlice.reducer;
+export default quizzesSlice.reducer;

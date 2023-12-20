@@ -30,7 +30,7 @@ export default function NewQuizForm() {
     const quizId = uuidv4();
 
     // dispatch add quiz action 
-    dispatch(addQuiz(quizId, name, topicId, cardIds))
+    dispatch(addQuiz({quizId, name, topicId, cardIds}))
     navigate(ROUTES.quizzesRoute())
   };
 

@@ -5,7 +5,14 @@ import { createSlice } from "@reduxjs/toolkit";
 export const topicsSlice = createSlice({
     name: 'topics',
     initialState: {
-        topics: {}
+        topics: {
+            '123': {
+                id: '123',
+                name: 'example topic',
+                icon: 'https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/calendar.svg',
+                quizIds: ['456']
+              }
+        }
     },
     reducers: {
         addTopic: (state, action) => {
@@ -34,4 +41,4 @@ export const { addTopic, addQuizId } = topicsSlice.actions;
 // SELECTORS
 export const selectTopics = (state) => state.topics.topics; // Selects topics nested inside initialState
 
-export const topicsReducer = topicsSlice.reducer;
+export default topicsSlice.reducer;
