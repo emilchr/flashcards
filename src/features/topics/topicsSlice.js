@@ -35,7 +35,7 @@ export const topicsSlice = createSlice({
 
 })
 
-
+// Action creators
 export const { addTopic, addQuizId } = topicsSlice.actions;
 
 // SELECTORS
