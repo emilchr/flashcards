@@ -8,7 +8,7 @@ export const cardsSlice = createSlice({
             front: 'Hello',
             back: 'There'
         },
-            '2':{ id: '2',
+            '2': { id: '2',
             front: 'Hi',
             back: 'Man'
         },
@@ -32,6 +32,6 @@ export const cardsSlice = createSlice({
 export const { addCard } = cardsSlice.actions;
 
 // Selectors
-export const findCardId = (id) => (state) => state.cards.find(state.id === id); 
+export const findCardId = (id) => (state) => state.cards.find(state.cards.id === id); 
 
 export default cardsSlice.reducer;
