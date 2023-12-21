@@ -4,9 +4,8 @@ import { findCardId } from "./cardsSlice";// import selector
 
 
 export default function Card({ id }) {
-  const card = useSelector(findCardId); // replace this with a call to your selector to get a card by id
+  const card = useSelector(findCardId(id)); // replace this with a call to your selector to get a card by id
   const [flipped, setFlipped] = useState(false);
-  console.log(card)
 
   return (
     <li>
